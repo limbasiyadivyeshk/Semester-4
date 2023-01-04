@@ -1,0 +1,7 @@
+1. print order list -
+2. print today's date
+3. get data from 2 files and append it to 3rd files
+4. odd even number
+5. largest from two number
+6. largest from three number
+7. leap year or not
