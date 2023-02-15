@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nike_store/listofshoes.dart';
 import 'package:nike_store/start.dart';
 
 void main() {
@@ -13,6 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowMaterialGrid: false,
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.

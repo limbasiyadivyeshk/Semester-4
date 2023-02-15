@@ -15,18 +15,6 @@ class start extends StatelessWidget {
 
                 ),
               ),
-
-     Expanded(child:  Container(
-          margin: EdgeInsets.only(left: 300),
-          decoration: BoxDecoration(color: Colors.white10,
-            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(200)
-
-            ),
-          ),
-        width: 200,
-        height: 100,
-
-        ), ),
         Container(
          child: CustomPaint(
            painter: MyShape(),
@@ -46,21 +34,22 @@ class start extends StatelessWidget {
                        child: Text(
                             "Start Journy\nWith Nike",
                             style: TextStyle(
-                              fontSize: 58,
+                              fontSize: 45,
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                      alignment: Alignment.bottomCenter,
                         ),),
                     Expanded(child: Container(
                         child: Text(
                             "Smart, gorgeous & fashionable\nCollection",
                             style: TextStyle(
-                              fontSize: 22,
+                              fontSize: 19,
                               color: Colors.white,
                             ),
                           ),
-
+                            alignment: Alignment.topCenter,
                         ),),
                     Expanded(
                       child: InkWell(
@@ -87,8 +76,18 @@ class MyShape extends CustomPainter {
     // TODO: implement paint
     final paint = Paint();
     final path = Path();
+    final path1 = Path();
     final paint1 = Paint();
+    path.moveTo(size.width*0.7, 0);
 
+    path.quadraticBezierTo(
+        size.width*.85,
+        size.height*0.2,
+        size.width,
+        size.height*0.2);
+    path.lineTo(size.width*0.7,0);
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width, size.height*0.2);
 
     path.moveTo(0, size.height * 0.2);
     path.quadraticBezierTo(
@@ -116,13 +115,13 @@ class MyShape extends CustomPainter {
     );
     path.quadraticBezierTo(
       size.width * 0.75,
-      size.height * 0.65,
+      size.height * 0.63,
       size.width * 0.85,
       size.height * 0.6,
     );
     path.quadraticBezierTo(
       size.width * 0.95,
-      size.height * 0.55,
+      size.height * 0.58,
       size.width * 1,
       size.height * 0.58,
     );
@@ -132,7 +131,38 @@ class MyShape extends CustomPainter {
     path.lineTo(0, size.height*0.55);
 
 
-    
+
+
+    path1.moveTo(size.width * 0.25, size.height);
+    path1.quadraticBezierTo(
+        size.width*0.2,
+        size.height * 0.88,
+        size.width *0.45,
+        size.height *0.875);
+    path1.quadraticBezierTo(
+        size.width*0.78,
+        size.height * 0.88,
+        size.width *0.8,
+        size.height);
+    paint1.style = PaintingStyle.fill;
+    paint1.color = Colors.white10;
+    canvas.drawPath(path1, paint1);
+
+    path1.moveTo(size.width * 0.2, size.height);
+    path1.quadraticBezierTo(
+        size.width*0.15,
+        size.height * 0.85,
+        size.width *0.5,
+        size.height *0.855);
+    path1.quadraticBezierTo(
+        size.width*0.785,
+        size.height * 0.855,
+        size.width *0.85,
+        size.height);
+    paint1.style = PaintingStyle.fill;
+    paint1.color = Colors.white10;
+    canvas.drawPath(path1, paint1);
+
     path.moveTo(size.width * 0.3, size.height);
     path.quadraticBezierTo(
         size.width*0.25,
@@ -145,7 +175,8 @@ class MyShape extends CustomPainter {
         size.width *0.75,
         size.height);
     paint1.style = PaintingStyle.fill;
-    paint1.color = Colors.white10;
+    paint1.color = Colors.white24;
+
     canvas.drawPath(path, paint1);
 
   }
