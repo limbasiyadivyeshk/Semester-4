@@ -1,4 +1,4 @@
-# nike_store1
+# nike_store
 
 A new Flutter project.
 

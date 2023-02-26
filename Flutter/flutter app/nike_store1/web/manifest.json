@@ -1,6 +1,6 @@
 {
-    "name": "nike_store1",
-    "short_name": "nike_store1",
+    "name": "nike_store",
+    "short_name": "nike_store",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
