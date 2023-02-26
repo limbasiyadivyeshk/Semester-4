@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_store/homepage.dart';
+import 'package:nike_store1/homepage.dart';
 
 class ShoesDetail extends StatelessWidget {
   const ShoesDetail({Key? key}) : super(key: key);
@@ -162,7 +162,7 @@ class ShoesDetail extends StatelessWidget {
                               child: Container(
                                 margin: EdgeInsets.all(5),
                                 child: Transform.rotate(
-                                  angle: angle,
+                                  angle: 175,
                                   child: Container(
                                     child:
                                         Image.asset('assets/images/nike1.png'),
@@ -180,7 +180,7 @@ class ShoesDetail extends StatelessWidget {
                               child: Container(
                                 margin: EdgeInsets.all(5),
                                 child: Transform.rotate(
-                                  angle: angle,
+                                  angle: 175,
                                   child: Container(
                                       child: Image.asset('assets/images/nike1-1.png')),
                                 ),

@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
           Container(
             child: Text(
               'Collections',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              style: TextStyle(fontFamily: 'impact', fontSize: 20),
             ),
             alignment: Alignment.centerLeft,
             margin: EdgeInsets.only(left: 20),
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                   child: Text(
                     'Shoes',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'impact',
                       fontSize: 14,
                     ),
                   ),
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                 Container(
                     child: Text(
                       'Clothing',
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                      style: TextStyle(color: Colors.grey, fontSize: 14,fontFamily: 'impact'),
                     ),
                     margin: EdgeInsets.only(
                       left: 25,
@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
                       left: 25,
                     )),
                 Container(
-                    child: Column(children: []),
+                    child: TextField(decoration: InputDecoration(fillColor: Colors.grey.shade200)),
                     margin: EdgeInsets.only(
                       left: 25,
                     )),
@@ -137,7 +137,7 @@ class HomePage extends StatelessWidget {
                                                 child: Text('  '),
                                               ),
                                               Container(
-                                                child: Icon(star),
+                                                child: Icon(star,size: 17,),
                                               ),
                                               Container(
                                                 child: Text('4.8'),
@@ -166,7 +166,7 @@ class HomePage extends StatelessWidget {
                             Container(
                               child: Text('React Frenzy',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'impact',
                                       fontSize: 15)),
                             ),
                             Container(
@@ -174,7 +174,7 @@ class HomePage extends StatelessWidget {
                                 '\$160',
                                 style: TextStyle(
                                     color: Colors.grey,
-                                    fontWeight: FontWeight.bold),
+                                    fontFamily: 'impact'),
                               ),
                             ),
                           ],
@@ -220,7 +220,7 @@ class HomePage extends StatelessWidget {
                                               child: Text('   '),
                                             ),
                                             Container(
-                                              child: Icon(star),
+                                              child: Icon(star,size: 17,),
                                             ),
                                             Container(
                                               child: Text('4.8'),
@@ -246,14 +246,14 @@ class HomePage extends StatelessWidget {
                           Container(
                             child: Text('Adapt BB 2.0',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15)),
+                                    fontFamily: 'impact', fontSize: 15)),
                           ),
                           Container(
                             child: Text(
                               '\$350',
                               style: TextStyle(
                                   color: Colors.grey,
-                                  fontWeight: FontWeight.bold),
+                                  fontFamily: 'impact'),
                             ),
                           ),
                         ],
@@ -305,7 +305,7 @@ class HomePage extends StatelessWidget {
                                               child: Text('  '),
                                             ),
                                             Container(
-                                              child: Icon(star),
+                                              child: Icon(star,size: 17,),
                                             ),
                                             Container(
                                               child: Text('4.8'),
@@ -332,14 +332,14 @@ class HomePage extends StatelessWidget {
                           Container(
                             child: Text('Air Max Excee',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15)),
+                                    fontFamily: 'impact', fontSize: 15)),
                           ),
                           Container(
                             child: Text(
                               '\$90',
                               style: TextStyle(
                                   color: Colors.grey,
-                                  fontWeight: FontWeight.bold),
+                                  fontFamily: 'impact'),
                             ),
                           ),
                         ],
@@ -384,7 +384,7 @@ class HomePage extends StatelessWidget {
                                               child: Text('  '),
                                             ),
                                             Container(
-                                              child: Icon(star),
+                                              child: Icon(star,size: 17,),
                                             ),
                                             Container(
                                               child: Text('4.8'),
@@ -410,14 +410,14 @@ class HomePage extends StatelessWidget {
                           Container(
                             child: Text('Air Max Impact',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15)),
+                                    fontFamily: 'impact', fontSize: 15)),
                           ),
                           Container(
                             child: Text(
                               '\$75.97',
                               style: TextStyle(
                                   color: Colors.grey,
-                                  fontWeight: FontWeight.bold),
+                                  fontFamily: 'impact'),
                             ),
                           ),
                         ],
