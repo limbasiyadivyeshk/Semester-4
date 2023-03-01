@@ -1,435 +1,139 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_store/shoedetail.dart';
-
-double angle = 175;
+import 'package:nike_store1/newpage.dart';
+import 'package:nike_store1/shoedetail.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-  static const IconData star = IconData(0xe5f9, fontFamily: 'MaterialIcons');
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
       body: Container(
-          child: Column(
-        children: [
-          Container(
-            child: Row(children: [
-              Expanded(
-                child: Container(
-                  child: Image.asset('assets/images/nikelogo.png', height: 30),
-                  margin: EdgeInsets.only(left: 20),
-                  alignment: Alignment.centerLeft,
+        padding: EdgeInsets.only(top: 30, left: 15, right: 15, bottom: 15),
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      child: Column(
+                        children: [
+                          Expanded(
+                              child: Container(
+                            child: Image.asset(
+                              'assets/images/nikelogo.png',
+                              width: 70,
+                              alignment: Alignment.bottomCenter,
+                            ),
+                          )),
+                          Expanded(
+                            child: Container(
+                              child: Text(
+                                'Collection',
+                                style: (TextStyle(
+                                    fontFamily: 'impact', fontSize: 20)),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      alignment: Alignment.centerLeft,
+                    )),
+                    Expanded(
+                        child: Container(
+                      child: Icon(Icons.menu),
+                      alignment: Alignment.centerRight,
+                    )),
+                  ],
                 ),
               ),
-              Expanded(
-                child: Container(
-                  child: Icon(Icons.menu),
-                  alignment: Alignment.centerRight,
-                  margin: EdgeInsets.only(right: 10),
-                ),
-              )
-            ]),
-            margin: EdgeInsets.only(top: 35),
-          ),
-          Container(
-            child: Text(
-              'Collections',
-              style: TextStyle(fontFamily: 'impact', fontSize: 20),
             ),
-            alignment: Alignment.centerLeft,
-            margin: EdgeInsets.only(left: 20),
-          ),
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  child: Text(
-                    'Shoes',
-                    style: TextStyle(
-                      fontFamily: 'impact',
-                      fontSize: 14,
-                    ),
-                  ),
-                  margin: EdgeInsets.only(
-                    left: 25,
-                  ),
-                  decoration: BoxDecoration(
-                      border: Border(
-                          bottom: BorderSide(width: 2, color: Colors.black))),
-                ),
-                Container(
-                    child: Text(
-                      'Clothing',
-                      style: TextStyle(color: Colors.grey, fontSize: 14,fontFamily: 'impact'),
-                    ),
-                    margin: EdgeInsets.only(
-                      left: 25,
-                    )),
-                Container(
-                    child: Image.asset(
-                      'assets/images/setting.png',
-                      height: 25,
-                    ),
-                    margin: EdgeInsets.only(
-                      left: 25,
-                    )),
-                Container(
-                    child: TextField(decoration: InputDecoration(fillColor: Colors.grey.shade200)),
-                    margin: EdgeInsets.only(
-                      left: 25,
-                    )),
-              ],
-            ),
-            margin: EdgeInsets.only(left: 10, right: 10, top: 25),
-          ),
-          Container(
-            child: Row(children: [
-              Expanded(
-                  child: Container(
-                padding: EdgeInsets.only(left: 10),
-                child: Column(
+            Expanded(
+              child: Container(
+                child: Row(
                   children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return ShoesDetail();
-                        }));
-                      },
+                    Expanded(
                       child: Container(
-                        margin: EdgeInsets.only(top: 20),
-                        child: Column(
-                          children: [
-                            Stack(
-                              children: <Widget>[
-                                Container(
-                                  decoration: BoxDecoration(
-                                      color: Colors.black12,
-                                      borderRadius: BorderRadius.circular(20)),
-                                  width: 125,
-                                  height: 140,
-                                  margin: EdgeInsets.only(top: 10, left: 20),
-                                ),
-                                Container(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Transform.rotate(
-                                          angle: angle,
-                                          child: Container(
-                                            child: Image.asset(
-                                              'assets/images/nike1.png',
-                                              width: 125,
-                                            ),
-                                          )),
-                                      Container(
-                                        child: Text('\n'),
-                                      ),
-                                      Container(
-                                          margin: EdgeInsets.only(left: 20),
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                child: Text('  '),
-                                              ),
-                                              Container(
-                                                child: Icon(star,size: 17,),
-                                              ),
-                                              Container(
-                                                child: Text('4.8'),
-                                              ),
-                                              Container(
-                                                child: Text('           '),
-                                              ),
-                                              Container(
-                                                child:
-                                                    Icon(CupertinoIcons.heart),
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8),
-                                                    color: Colors.white),
-                                                alignment:
-                                                    Alignment.centerRight,
-                                              ),
-                                            ],
-                                          )),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                            Container(
-                              child: Text('React Frenzy',
-                                  style: TextStyle(
-                                      fontFamily: 'impact',
-                                      fontSize: 15)),
-                            ),
-                            Container(
-                              child: Text(
-                                '\$160',
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontFamily: 'impact'),
-                              ),
-                            ),
-                          ],
+                        child: Text(
+                          'Shoes',
+                          style: TextStyle(
+                            fontFamily: 'impact',
+                            fontSize: 15,
+                          ),
                         ),
+                        decoration: BoxDecoration(
+                          border: Border(
+                              bottom:
+                                  BorderSide(width: 2, color: Colors.black)),
+                        ),
+                        margin: EdgeInsets.only(right: 29),
+                      ),
+                      flex: 2,
+                    ),
+
+                    Expanded(
+                        child: Container(
+                      child: Text(
+                        'Clothing',
+                        style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 15,
+                            fontFamily: 'impact'),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(top: 30),
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: <Widget>[
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.black12,
-                                    borderRadius: BorderRadius.circular(20)),
-                                width: 125,
-                                height: 140,
-                                margin: EdgeInsets.only(top: 10, left: 25),
-                              ),
-                              Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Transform.rotate(
-                                        angle: angle,
-                                        child: Container(
-                                          child: Image.asset(
-                                            'assets/images/nike3.png',
-                                            width: 125,
-                                          ),
-                                          margin: EdgeInsets.only(
-                                              left: 10, top: 10),
-                                        )),
-                                    Container(
-                                      child: Text('\n'),
-                                    ),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 20),
-                                        child: Row(
-                                          children: [
-                                            Container(
-                                              child: Text('   '),
-                                            ),
-                                            Container(
-                                              child: Icon(star,size: 17,),
-                                            ),
-                                            Container(
-                                              child: Text('4.8'),
-                                            ),
-                                            Container(
-                                              child: Text('           '),
-                                            ),
-                                            Container(
-                                              child: Icon(CupertinoIcons.heart),
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                  color: Colors.white),
-                                              alignment: Alignment.centerRight,
-                                            ),
-                                          ],
-                                        )),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            child: Text('Adapt BB 2.0',
-                                style: TextStyle(
-                                    fontFamily: 'impact', fontSize: 15)),
-                          ),
-                          Container(
-                            child: Text(
-                              '\$350',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontFamily: 'impact'),
-                            ),
-                          ),
-                        ],
+                      flex: 2,),
+                    Expanded(
+                        child: Container(
+                      child: Image.asset(
+                        'assets/images/setting.png',
+                        height: 25,
                       ),
+                    )),
+                    Expanded(
+                      child: Container(
+                        child: TextField(
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                icon: Icon(
+                                  Icons.search,
+                                  color: Colors.black,
+                                 size: 20,
+                                ),
+                              hintText: 'Search..',
+                              hintStyle: TextStyle(fontSize: 15),
+                            )),
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(50),
+                              bottomLeft: Radius.circular(50),
+                              bottomRight: Radius.circular(50),
+                            )),
+                        padding: EdgeInsets.only(left: 10,bottom: 10),
+                        alignment: Alignment.center,
+                      ),
+                      flex: 4,
                     ),
                   ],
                 ),
-              )),
-              Expanded(
-                  child: Container(
-                child: Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 40),
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: <Widget>[
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.black12,
-                                    borderRadius: BorderRadius.circular(20)),
-                                width: 125,
-                                height: 140,
-                                margin: EdgeInsets.only(top: 10, left: 20),
-                              ),
-                              Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Transform.rotate(
-                                        angle: angle,
-                                        child: Container(
-                                          child: Image.asset(
-                                            'assets/images/nike2.png',
-                                            width: 125,
-                                          ),
-                                          margin: EdgeInsets.only(
-                                              top: 10, left: 10),
-                                        )),
-                                    Container(
-                                      child: Text('\n'),
-                                    ),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 20),
-                                        child: Row(
-                                          children: [
-                                            Container(
-                                              child: Text('  '),
-                                            ),
-                                            Container(
-                                              child: Icon(star,size: 17,),
-                                            ),
-                                            Container(
-                                              child: Text('4.8'),
-                                            ),
-                                            Container(
-                                              child: Text('           '),
-                                            ),
-                                            Container(
-                                              child: Icon(
-                                                  CupertinoIcons.heart_solid),
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                  color: Colors.white),
-                                              alignment: Alignment.centerRight,
-                                            ),
-                                          ],
-                                        )),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            child: Text('Air Max Excee',
-                                style: TextStyle(
-                                    fontFamily: 'impact', fontSize: 15)),
-                          ),
-                          Container(
-                            child: Text(
-                              '\$90',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontFamily: 'impact'),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 30),
-                      child: Column(
-                        children: [
-                          Stack(
-                            children: <Widget>[
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Colors.black12,
-                                    borderRadius: BorderRadius.circular(20)),
-                                width: 125,
-                                height: 140,
-                                margin: EdgeInsets.only(top: 10, left: 20),
-                              ),
-                              Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Transform.rotate(
-                                        angle: angle,
-                                        child: Container(
-                                          child: Image.asset(
-                                            'assets/images/nike4.png',
-                                            width: 125,
-                                          ),
-                                          margin: EdgeInsets.only(
-                                              top: 10, left: 10),
-                                        )),
-                                    Container(
-                                      child: Text('\n'),
-                                    ),
-                                    Container(
-                                        margin: EdgeInsets.only(left: 20),
-                                        child: Row(
-                                          children: [
-                                            Container(
-                                              child: Text('  '),
-                                            ),
-                                            Container(
-                                              child: Icon(star,size: 17,),
-                                            ),
-                                            Container(
-                                              child: Text('4.8'),
-                                            ),
-                                            Container(
-                                              child: Text('           '),
-                                            ),
-                                            Container(
-                                              child: Icon(CupertinoIcons.heart),
-                                              decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                  color: Colors.white),
-                                              alignment: Alignment.centerRight,
-                                            ),
-                                          ],
-                                        )),
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            child: Text('Air Max Impact',
-                                style: TextStyle(
-                                    fontFamily: 'impact', fontSize: 15)),
-                          ),
-                          Container(
-                            child: Text(
-                              '\$75.97',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontFamily: 'impact'),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              )),
-            ]),
-          )
-        ],
-      )),
+                margin: EdgeInsets.only(left: 10, right: 10, top: 25),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                child: NewPage(),
+                margin: EdgeInsets.only(top: 25),
+              ),
+              flex: 8,
+            ),
+          ],
+        ),
+      ),
     ));
   }
 }

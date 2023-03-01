@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nike_store/start.dart';
+import 'package:nike_store1/homepage.dart';
+import 'package:nike_store1/newpage.dart';
+import 'package:nike_store1/start.dart';
 
 void main() {
   runApp(const MyApp());

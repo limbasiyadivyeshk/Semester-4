@@ -1,10 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:nike_store/homepage.dart';
-
+import 'package:http/http.dart' as http;
+import 'package:nike_store1/homepage.dart';
+int id=0;
 class ShoesDetail extends StatelessWidget {
-  const ShoesDetail({Key? key}) : super(key: key);
 
+  const ShoesDetail({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -69,7 +72,10 @@ class ShoesDetail extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
+      body: FutureBuilder<List<dynamic>>(
+    builder: (context, snapshot) {
+    if (snapshot != null && snapshot.hasData) {
+    return  Container(
         margin: EdgeInsets.only(top: 15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -87,7 +93,7 @@ class ShoesDetail extends StatelessWidget {
                   Expanded(
                     child: Container(
                       child: Text(
-                        'React Frenzy',
+                        snapshot.data![id]['shoesName'].toString(),
                         style: TextStyle(
                              fontSize: 20,fontFamily: 'impact'),
                       ),
@@ -146,7 +152,7 @@ class ShoesDetail extends StatelessWidget {
                             Expanded(
                                 child: Container(
                               child: Text(
-                                '\$160',
+                                snapshot.data![0]['price'].toString(),
                                 style: TextStyle(
                                     fontSize: 20,fontFamily: 'impact'),
                               ),
@@ -162,10 +168,10 @@ class ShoesDetail extends StatelessWidget {
                               child: Container(
                                 margin: EdgeInsets.all(5),
                                 child: Transform.rotate(
-                                  angle: angle,
+                                  angle: 175,
                                   child: Container(
                                     child:
-                                        Image.asset('assets/images/nike1.png'),
+                                        Image.network(snapshot.data![0]['image1'].toString()),
                                   ),
                                 ),
                                 padding: EdgeInsets.only(right: 10),
@@ -180,9 +186,9 @@ class ShoesDetail extends StatelessWidget {
                               child: Container(
                                 margin: EdgeInsets.all(5),
                                 child: Transform.rotate(
-                                  angle: angle,
+                                  angle: 175,
                                   child: Container(
-                                      child: Image.asset('assets/images/nike1-1.png')),
+                                      child: Image.network(snapshot.data![0]['image2'].toString())),
                                 ),
                                 padding: EdgeInsets.only(right: 10),
                                 decoration: BoxDecoration(
@@ -210,8 +216,7 @@ class ShoesDetail extends StatelessWidget {
                                     child: Transform.rotate(
                                   angle: 100,
                                   child: Container(
-                                      child: Image.asset(
-                                          'assets/images/nike1.png')),
+                                      child: Image.network(snapshot.data![0]['image1'].toString()),),
                                 )),
                                 Expanded(
                                     child: Container(
@@ -227,8 +232,7 @@ class ShoesDetail extends StatelessWidget {
                                         ),
                                         margin: EdgeInsets.only(
                                             left: 10, bottom: 15),
-                                        child: Image.asset(
-                                            'assets/images/nike1-4.png'),
+                                        child: Image.network(snapshot.data![0]['image3'].toString()),
                                         height: 100,
                                       )),
                                       Expanded(
@@ -240,8 +244,7 @@ class ShoesDetail extends StatelessWidget {
                                         ),
                                         margin: EdgeInsets.only(
                                             left: 10, bottom: 15),
-                                        child: Image.asset(
-                                            'assets/images/nike1-2.png'),
+                                        child: Image.network(snapshot.data![0]['image4'].toString()),
                                         height: 100,
                                       )),
                                       Expanded(
@@ -253,8 +256,7 @@ class ShoesDetail extends StatelessWidget {
                                         ),
                                         margin: EdgeInsets.only(
                                             left: 10, bottom: 15, right: 10),
-                                        child: Image.asset(
-                                            'assets/images/nike1-3.png'),
+                                        child: Image.network(snapshot.data![0]['image5'].toString()),
                                         height: 100,
                                       )),
                                     ],
@@ -439,7 +441,19 @@ class ShoesDetail extends StatelessWidget {
             )
           ],
         ),
-      ),
-    ));
+      );
+    } else {
+    return Center(child: CircularProgressIndicator());
+    }},
+    future: calldemoApi())
+    )
+    );
   }
+}
+Future<List<dynamic>> calldemoApi() async {
+  http.Response res = await http
+      .get(Uri.parse("https://63f6d55759c944921f79f865.mockapi.io/Nike_Shoes/"));
+  print("data::${res.body.toString()}");
+  List<dynamic> map = jsonDecode(res.body.toString());
+  return map;
 }
